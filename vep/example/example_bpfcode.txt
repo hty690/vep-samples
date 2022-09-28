@@ -1,0 +1,55 @@
+#include <linux/bpf.h>
+#include <bpf/bpf_endian.h>
+#include <bpf/bpf_helpers.h>
+
+#define MAP_SIZE 4000000
+
+
+struct bit_map {
+    __u8 map[MAP_SIZE];
+};
+
+
+
+struct bpf_map_def SEC("maps") proxy_map = {
+        .type = BPF_MAP_TYPE_HASH,
+        .key_size = sizeof(unsigned short),
+        .value_size = sizeof(unsigned long),
+        .max_entries = 1000,
+};
+
+
+
+SEC("sk_skb/stream_parser")
+int bpf_prog1(struct __sk_buff *skb)
+{
+  __u32 *x, *y;
+  
+  __u16 key;
+
+  key = 1;
+  x = bpf_map_lookup_elem(&proxy_map, &key);
+  if (x == NULL) {
+    return 0;
+  }
+
+  key = 2;
+  y = bpf_map_lookup_elem(&proxy_map, &key);
+  if (y == NULL) {
+    return 0;
+  }
+  __u32 sum;
+
+  if (2 * *x <= *y)
+        return 1;
+    sum = *x;
+  while (sum < *y) {
+      sum = 2 * sum + *x;
+      *y = 2 * *y;
+      bpf_printk("Value:%d\n", sum);
+  }
+  return 0;
+
+}
+
+char _license[] SEC("license") = "GPL";

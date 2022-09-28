@@ -1,0 +1,6 @@
+[submodule "vst-canonical-form"]
+	path = vst-canonical-form
+	url = https://WxWyashen@bitbucket.org/qinxiang-SJTU/vst-canonical-form.git
+[submodule "ebpf-samples"]
+	path = ebpf-samples
+	url = https://github.com/hty690/ebpf-samples.git

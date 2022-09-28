@@ -1,0 +1,123 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Workspace root: /home/opam/ebpf
+# Auto-detected concurrency: 8
+$ /home/opam/.opam/4.10/bin/ocamlc.opt -config > /tmp/dune_b48917_output
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; for_host = None
+#  ; fdo_target_exe = None
+#  ; build_dir = "default"
+#  ; toplevel_path = Some External "/home/opam/.opam/4.10/lib/toplevel"
+#  ; ocaml_bin = External "/home/opam/.opam/4.10/bin"
+#  ; ocaml = Ok External "/home/opam/.opam/4.10/bin/ocaml"
+#  ; ocamlc = External "/home/opam/.opam/4.10/bin/ocamlc.opt"
+#  ; ocamlopt = Ok External "/home/opam/.opam/4.10/bin/ocamlopt.opt"
+#  ; ocamldep = Ok External "/home/opam/.opam/4.10/bin/ocamldep.opt"
+#  ; ocamlmklib = Ok External "/home/opam/.opam/4.10/bin/ocamlmklib.opt"
+#  ; env =
+#      map
+#        { "DUNE_OCAML_HARDCODED" : "/home/opam/.opam/4.10/lib"
+#        ; "DUNE_OCAML_STDLIB" : "/home/opam/.opam/4.10/lib/ocaml"
+#        ; "DUNE_SOURCEROOT" : "/home/opam/ebpf"
+#        ; "INSIDE_DUNE" : "/home/opam/ebpf/_build/default"
+#        ; "OCAMLFIND_IGNORE_DUPS_IN" :
+#            "/home/opam/ebpf/_build/install/default/lib"
+#        ; "OCAMLPATH" : "/home/opam/ebpf/_build/install/default/lib"
+#        ; "OCAMLTOP_INCLUDE_PATH" :
+#            "/home/opam/ebpf/_build/install/default/lib/toplevel"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; findlib_paths = [ External "/home/opam/.opam/4.10/lib" ]
+#  ; arch_sixtyfour = true
+#  ; natdynlink_supported = true
+#  ; supports_shared_libraries = true
+#  ; ocaml_config =
+#      { version = "4.10.2"
+#      ; standard_library_default = "/home/opam/.opam/4.10/lib/ocaml"
+#      ; standard_library = "/home/opam/.opam/4.10/lib/ocaml"
+#      ; standard_runtime = "the_standard_runtime_variable_was_deleted"
+#      ; ccomp_type = "cc"
+#      ; c_compiler = "gcc"
+#      ; ocamlc_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv"; "-fPIC" ]
+#      ; ocamlc_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; ocamlopt_cflags = [ "-O2"; "-fno-strict-aliasing"; "-fwrapv" ]
+#      ; ocamlopt_cppflags = [ "-D_FILE_OFFSET_BITS=64"; "-D_REENTRANT" ]
+#      ; bytecomp_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-fPIC"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; bytecomp_c_libraries = [ "-lm"; "-ldl"; "-lpthread" ]
+#      ; native_c_compiler =
+#          [ "gcc"
+#          ; "-O2"
+#          ; "-fno-strict-aliasing"
+#          ; "-fwrapv"
+#          ; "-D_FILE_OFFSET_BITS=64"
+#          ; "-D_REENTRANT"
+#          ]
+#      ; native_c_libraries = [ "-lm"; "-ldl" ]
+#      ; native_pack_linker = [ "ld"; "-r"; "-o" ]
+#      ; cc_profile = []
+#      ; architecture = "amd64"
+#      ; model = "default"
+#      ; int_size = 63
+#      ; word_size = 64
+#      ; system = "linux"
+#      ; asm = [ "as" ]
+#      ; asm_cfi_supported = true
+#      ; with_frame_pointers = false
+#      ; ext_exe = ""
+#      ; ext_obj = ".o"
+#      ; ext_asm = ".s"
+#      ; ext_lib = ".a"
+#      ; ext_dll = ".so"
+#      ; os_type = "Unix"
+#      ; default_executable_name = "a.out"
+#      ; systhread_supported = true
+#      ; host = "x86_64-pc-linux-gnu"
+#      ; target = "x86_64-pc-linux-gnu"
+#      ; profiling = false
+#      ; flambda = false
+#      ; spacetime = false
+#      ; safe_string = true
+#      ; exec_magic_number = "Caml1999X027"
+#      ; cmi_magic_number = "Caml1999I027"
+#      ; cmo_magic_number = "Caml1999O027"
+#      ; cma_magic_number = "Caml1999A027"
+#      ; cmx_magic_number = "Caml1999Y027"
+#      ; cmxa_magic_number = "Caml1999Z027"
+#      ; ast_impl_magic_number = "Caml1999M027"
+#      ; ast_intf_magic_number = "Caml1999N027"
+#      ; cmxs_magic_number = "Caml1999D027"
+#      ; cmt_magic_number = "Caml1999T027"
+#      ; natdynlink_supported = true
+#      ; supports_shared_libraries = true
+#      ; windows_unicode = false
+#      }
+#  }
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamldep.opt -modules -intf Ebpfstate.mli) > _build/default/.main.eobjs/Ebpfstate.mli.d
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamldep.opt -modules -impl Ebpfstate.ml) > _build/default/.main.eobjs/Ebpfstate.ml.d
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamldep.opt -modules -impl test.ml) > _build/default/.main.eobjs/test.ml.d
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -bin-annot -I .main.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/byte/dune__exe__Ebpfstate.cmi -c -intf Ebpfstate.mli)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -bin-annot -I .main.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/byte/dune__exe__Ebpf_helper.cmi -c -intf Ebpf_helper.mli)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -I .main.eobjs/byte -I .main.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/native/dune__exe__Ebpfstate.cmx -c -impl Ebpfstate.ml)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -bin-annot -I .main.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/byte/dune__exe__Ebpfop.cmi -c -intf Ebpfop.mli)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -bin-annot -I .main.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/byte/dune__exe__EbpfExec.cmi -c -intf EbpfExec.mli)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -bin-annot -I .main.eobjs/byte -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/byte/dune__exe__Test.cmi -c -intf test.mli)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -I .main.eobjs/byte -I .main.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/native/dune__exe__Main.cmx -c -impl main.ml)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -I .main.eobjs/byte -I .main.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/native/dune__exe__EbpfExec.cmx -c -impl EbpfExec.ml)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -I .main.eobjs/byte -I .main.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/native/dune__exe__Ebpfop.cmx -c -impl Ebpfop.ml)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -I .main.eobjs/byte -I .main.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/native/dune__exe__Test.cmx -c -impl test.ml)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -I .main.eobjs/byte -I .main.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .main.eobjs/native/dune__exe__Ebpf_helper.cmx -c -impl Ebpf_helper.ml)
+$ (cd _build/default && /home/opam/.opam/4.10/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -w -33 -g -o main.exe .main.eobjs/native/dune__exe.cmx .main.eobjs/native/dune__exe__BinNums.cmx .main.eobjs/native/dune__exe__Datatypes.cmx .main.eobjs/native/dune__exe__Nat.cmx .main.eobjs/native/dune__exe__BinPos.cmx .main.eobjs/native/dune__exe__BinNat.cmx .main.eobjs/native/dune__exe__BinInt.cmx .main.eobjs/native/dune__exe__List_lemma.cmx .main.eobjs/native/dune__exe__Exprdef.cmx .main.eobjs/native/dune__exe__Localdef.cmx .main.eobjs/native/dune__exe__Propdef.cmx .main.eobjs/native/dune__exe__EXvar_help.cmx .main.eobjs/native/dune__exe__Error.cmx .main.eobjs/native/dune__exe__Sepdef.cmx .main.eobjs/native/dune__exe__Assdef.cmx .main.eobjs/native/dune__exe__Localsolver.cmx .main.eobjs/native/dune__exe__Propsolver.cmx .main.eobjs/native/dune__exe__AssSolver.cmx .main.eobjs/native/dune__exe__List.cmx .main.eobjs/native/dune__exe__Map_sep.cmx .main.eobjs/native/dune__exe__Ebpfstate.cmx .main.eobjs/native/dune__exe__PeanoNat.cmx .main.eobjs/native/dune__exe__Funcspec.cmx .main.eobjs/native/dune__exe__Ebpf_helper.cmx .main.eobjs/native/dune__exe__Ebpfstatement.cmx .main.eobjs/native/dune__exe__Ebpfop.cmx .main.eobjs/native/dune__exe__EbpfExec.cmx .main.eobjs/native/dune__exe__Test.cmx .main.eobjs/native/dune__exe__Main.cmx)

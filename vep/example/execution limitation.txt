@@ -1,0 +1,11 @@
+Hi Abe,
+    
+附件中包括了我们在3.23日讨论中所涉及到的相关文件。其中kmp_test.c是kmp算法在ebpf中的具体实现文件, kmp_test.v是我们在Coq中对kmp算法具体进行验证的文件,kmp_bytecode-longlong.txt是kmp_text.c编译所生成的bytecode。
+technical report中包含了对项目中使用的assertion的说明以及对于kmp这个例子我们如何进行验证的解释。
+    
+祝好
+
+吴熙炜
+2022.3.25
+
+
